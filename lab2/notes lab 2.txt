@@ -1,0 +1,7 @@
+Notes: Alex Cherekdjian
+
+3. When I ran the executable, a segmentation fault occurred. This is probably due to not inputing an argument in the command line for the number of delay.
+
+4. As the delay increases (from 500, to 3000, to 5000) the time the process for all the children to be created and parents increases.
+
+Other stuff I learned: After creating two threads, we need to join the threads in order for the program to wait until those threads are done finishing before quiting. 

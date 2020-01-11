@@ -1,0 +1,13 @@
+#!/bin/sh
+echo "Making 100k file . . ."
+dd if=/dev/random of=100k.txt bs=100000 count=1
+echo "--DONE--"
+echo "Making 1M file . . ."
+dd if=/dev/random of=1M.txt bs=1000000 count=1
+echo "--DONE--"
+echo "Making 10M file . . ."
+dd if=/dev/random of=10M.txt bs=10000000 count=1
+echo "--DONE--"
+echo "Making 100M file . . ."
+dd if=/dev/random of=100M.txt bs=100000000 count=1
+echo "--DONE--"

@@ -1,0 +1,25 @@
+Alex Cherekdjian
+Oberservations Lab #4
+
+Step 1)
+
+1. Explain what happens when you run the threadHello.c program? Do you get the same result if you run it multiple times? What if you are also running some other demanding processes (e.g., compiling a big program, playing a Flash game on a website, or watching streaming video) when you run this program?
+
+When I run the threadHello.c program, all the threads and their ID's print out in a random order then all return back in order from 0-9, then it prints the main thread is done. If I run it multiple times, the only difference is that the first time the threads print out their ID's are in a different order. When I ran mutiple tabs of google chrome that were streaming video, a very interesting phenomenon occurred. Instead of the typical "all threads say hello in a random order then all threads return in the same order", the program said hello from 6 threads first in random order, but then started the threads to return before continuing both processes at random until just the threads that printed that they had returned was left to complete. 
+
+
+2. The function go() has the parameter arg passed a local variable. Are these variables per-thread orshared state? Where does the compiler store these variables’ states?
+
+Since each thread has its own stack, they have their own local variable, thus this variable is per-thread, not shared state. The compiler stores these variables states in the process control block and stack.
+
+
+3. The main() has local variable i. Is this variable per-thread or shared state? Where does the compiler store this variable?
+
+The variable i is in a shared state since static only makes one copy for all programs to share. The compiler stores this variable in the heap since that is shared among threads. 
+
+
+Step 2)
+
+1. Delete the second for loop in threadHello.c program so that the main routine simply creates NTHREADS threads and then prints “Main thread done.” What are the possible outputs of the program now. Explain.
+
+The possibilities for the outputs of the program now are absolutely random, as now the print statement stating that the main thread is done is now printing whenever possible. This occurs essentially because pthread_join() is a function that suspends execution of the calling thread until the target thread terminates, thus once that for loop is called, the loop would rotate through the thread array and terminate each one, while not allowing any other thread to do work. This gives the printing at the end its order as well as always making sure the print statement saying that the main thread is done prints last. 

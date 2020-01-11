@@ -1,0 +1,8 @@
+Alex Cherekdjian
+Observations Lab #3
+
+3) In this step, the initial fork allows the first child process to write to the pipe. We closed fds[0], however then ran the dup2 command which made that child process send its info as input for fds[1] insteading of writing to the standard stream. Then the second process f[1] will read the command and execute. This was really interesting to do as I learned that you can pass the command through a pipe in order for another process to execute it. 
+
+4) In this process, I learned how to use the execlp command to run the cat command with arguments /etc/passwd. This would then send the output of this input into the pipe and the first downstream child would use that input into the function grep with argument root. This was really cool to learn as it showed that you could not only just pass data through pipes, but you could also run commands and pass outputs through pipes.  
+
+5) In this step, I learned that two processes could write to the same pipe, then another process could read all that data at once from that pipe. This is extremely useful as it is much easier than the forking method. I created two producer processes and one consumer processes, which each producer process sent the string either "hello frm producer1" or "Hello producer 2" depending on which producer it was. After that, I would close that end of the pipe in the consumer, the start reading all that data to the standard out. 

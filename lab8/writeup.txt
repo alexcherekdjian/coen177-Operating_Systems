@@ -1,0 +1,23 @@
+// Alex Cherekdjian
+// COEN 177 (Lab #8)
+// Tuesday 2:15pm
+// February 26, 2019
+
+FIFO Implementation: For fifo.c, I essentially would read in the next value and check to see if it the first value. If it is, insert into the array and then increase the number of stuff in the array variable by one as well as report a page fault. If not this, then I would check the entire array and see if any values matched. If found, then I would simply continue to the next number. If not found, then if the array is still empty, I would add the new item to the next available spot, increase the variable storing how full the array is, and report a page fault. If the array is full, insert the new page into the index specified by replace_pointer (which is initialized to 0), then increment the replace_pointer and make sure that replace_pointer will wrap around the array once at cache size. 
+
+Second Chance Implementation: For secondChance.c, I essentially would read in the next value and check to see if it the first value. If it is, insert into the array, increase the second_chance_tracker by one, and then increase the number of stuff in the array variable by one as well as report a page fault. If not this, then I would check the entire array and see if any values matched. If found, I would store the index to use later on. In the if statement that denotes I found a value, I would index that variable in the second_chance_array and change its value from a 0 to a 1 then continue with the next number. If not found, then if the array is still empty, I would add the new item to the next available spot, increase the variable storing how full the array is, report a page fault, and make sure the the second_chance_tracker wraps around if the array becomes full. If the array is full, search through the second_chance_array starting at second_chance_tracker. If a one is found initially, then assign that value from a 1 to a 0 and continue to the next value. Else if a 0 is found, replace that index in the main array to the new page_num, set second_chance_tracker to the next index, and make sure that the second_chance_tracker will wrap around if past the cache size. 
+
+LRU Implementation: For lru.c, I would read in the next value and check to see if it is the first value. If so, then report a page fault, assign the value to the first array slot, and assign in another array the current clock value which should be one, then increment clock and number of items in the array. If not the first item, then search the array. If the item is found, save its index for later. In the if statement for a found item, we need to assign that index in the other array that stores the clock values the current clock value and increment the clock. Then, continue on to the next value. If the value is not found, report a page fault and if the array is not empty, then add to new page number into the last available spot denoted at the index of the current number of filled items in the array. Then, at the same index in the clock storing array, store the current clock and increment both the clock and number of items in the array. If the array is full, go through the entire clock storing array (lru_array) and find the minimum number. Once found, replace that index with the new page number as well as that same index in the lru_array with the current clock.
+
+
+
+
+The comparison rate of missed pages due to cache sizes and the particular algorithm were all particulary similar as is expected. This is due to the fact that these algorithms essentially do the same thing but only differ in how efficient their implementation actually is. 
+
+/* Pages Missed Due to Cache Size*\
+Cache Size 	FIFO	Second Chance	LRU
+10	  		9892	9895			9894
+50	  		9472	9466			9467
+100	  		9013	9000			9005
+250	  		7576	7550			7574
+500	  		5214	5162			5204

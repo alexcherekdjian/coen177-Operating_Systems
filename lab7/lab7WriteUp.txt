@@ -1,0 +1,28 @@
+Alex Cherekdjian
+OS Lab 2:15pm Tuesday
+Feb 19, 2019
+
+To find the file, I used the the command: grep "pick proc" $(find /usr/src/kernel) which located the file proc.c in the kernel folder. I then used the get command on my linix machine terminal to get the file into my local machine. 
+
+In the file, I edited the function pick_proc. Essentially, I added a randomness factor in the for loop that picks the priority queue to have a 40 percent chance of incrementing to a lower priority. The code is as follows:
+
+// snippet from pick_proc function in proc.c
+
+...
+
+for (q=0; q < NR_SCHED_QUEUES; q++) {	
+ 	
+ 	int n = rand() % 10; // pick a random number
+ 	
+ 	if (q < 15 && n < 4){
+ 		q++; // if in range and random probability occurs, choose a lower priority 
+ 	}
+ 	
+	if(!(rp = rdy_head[q])) {
+		TRACE(VF_PICKPROC, printf("queue %d empty\n", q););
+		continue;
+	}
+	
+... 
+
+I then put the file back on the minix machine and used the command: make world, and: reboot to see my changes which definetly slowed down the boot up time of the system dramatically. 

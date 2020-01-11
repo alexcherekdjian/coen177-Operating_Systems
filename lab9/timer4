@@ -1,0 +1,85 @@
+#!/bin/sh
+echo "-----100k-----"
+echo "-----buffer = 100-----"
+time ./step4 100k.txt 100 2
+time ./step4 100k.txt 100 8
+time ./step4 100k.txt 100 32
+time ./step4 100k.txt 100 64
+echo "-----buffer = 1000-----"
+time ./step4 100k.txt 1000 2
+time ./step4 100k.txt 1000 8
+time ./step4 100k.txt 1000 32
+time ./step4 100k.txt 1000 64
+echo "-----buffer = 10000-----"
+time ./step4 100k.txt 10000 2
+time ./step4 100k.txt 10000 8
+time ./step4 100k.txt 10000 32
+time ./step4 100k.txt 10000 64
+echo "-----buffer = 100000-----"
+time ./step4 100k.txt 100000 2
+time ./step4 100k.txt 100000 8
+time ./step4 100k.txt 100000 32
+time ./step4 100k.txt 100000 64
+echo "-----1M-----"
+echo "-----buffer = 100-----"
+time ./step4 1M.txt 100 2
+time ./step4 1M.txt 100 8
+time ./step4 1M.txt 100 32
+time ./step4 1M.txt 100 64
+echo "-----buffer = 1000-----"
+time ./step4 1M.txt 1000 2
+time ./step4 1M.txt 1000 8
+time ./step4 1M.txt 1000 32
+time ./step4 1M.txt 1000 64
+echo "-----buffer = 10000-----"
+time ./step4 1M.txt 10000 2
+time ./step4 1M.txt 10000 8
+time ./step4 1M.txt 10000 32
+time ./step4 1M.txt 10000 64
+echo "-----buffer = 100000-----"
+time ./step4 1M.txt 100000 2
+time ./step4 1M.txt 100000 8
+time ./step4 1M.txt 100000 32
+time ./step4 1M.txt 100000 64
+echo "-----10M-----"
+echo "-----buffer = 100-----"
+time ./step4 10M.txt 100 2
+time ./step4 10M.txt 100 8
+time ./step4 10M.txt 100 32
+time ./step4 10M.txt 100 64
+echo "-----buffer = 1000-----"
+time ./step4 10M.txt 1000 2
+time ./step4 10M.txt 1000 8
+time ./step4 10M.txt 1000 32
+time ./step4 10M.txt 1000 64
+echo "-----buffer = 10000-----"
+time ./step4 10M.txt 10000 2
+time ./step4 10M.txt 10000 8
+time ./step4 10M.txt 10000 32
+time ./step4 10M.txt 10000 64
+echo "-----buffer = 100000-----"
+time ./step4 10M.txt 100000 2
+time ./step4 10M.txt 100000 8
+time ./step4 10M.txt 100000 32
+time ./step4 10M.txt 100000 64
+echo "-----100M-----"
+echo "-----buffer = 100-----"
+time ./step4 100M.txt 100 2
+time ./step4 100M.txt 100 8
+time ./step4 100M.txt 100 32
+time ./step4 100M.txt 100 64
+echo "-----buffer = 1000-----"
+time ./step4 100M.txt 1000 2
+time ./step4 100M.txt 1000 8
+time ./step4 100M.txt 1000 32
+time ./step4 100M.txt 1000 64
+echo "-----buffer = 10000-----"
+time ./step4 100M.txt 10000 2
+time ./step4 100M.txt 10000 8
+time ./step4 100M.txt 10000 32
+time ./step4 100M.txt 10000 64
+echo "-----buffer = 100000-----"
+time ./step4 100M.txt 100000 2
+time ./step4 100M.txt 100000 8
+time ./step4 100M.txt 100000 32
+time ./step4 100M.txt 100000 64

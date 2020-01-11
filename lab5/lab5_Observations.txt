@@ -1,0 +1,5 @@
+// Name: Alex Cherekdjian
+// Date: February 5, 2019
+// Title: Observations      
+
+1. When I run the threadSync.c program, 10 threads are created and when a thread enters the critical section, it prints out it has entered. Then, when a thread has returned, it also prints out to the screen it has returned. Once all the threads have returned, the program prints that the main thread has finished. This is different from the threadHello.c program as those threads do not enter a critical region where the other threads must wait until that thread is outside that region to first enter the critical region and then complete their task. In threadHello.c, the threads did not have to wait for anything and were run at the discretion of the OS without a critical region. 

@@ -1,0 +1,9 @@
+#!/bin/sh
+echo "-----100k-----"
+time ./step1 100k.txt 
+echo "-----1M-----"
+time ./step1 1M.txt 
+echo "-----10M-----"
+time ./step1 10M.txt 
+echo "-----100M-----"
+time ./step1 100M.txt 

@@ -1,0 +1,9 @@
+Alex Cherekdjian
+COEN 177 Lab
+January 9, 2019
+
+Observations
+
+The rectangle code: Finding the errors in this code was a little tricky, however after struggling for some time, I realized that the username in the "if" statement needed to be changed to my username, and that the "if" statements and "while" loops needed spaces in front of them. After fixing these errors, my code worked perfectly. 
+
+The circle code: In order to adapt the rectangle code to calculating the area of a circle, I created a prompt for the user to add a radius in the stream. The most difficult part was figuring out how to make pi as shell script does not calculate float point arithmetic. The solution to this problem came from using the bc function, specifically the -l library. I echo'd out the command to the bc which calculated the area and then stored the result back into my variable. This worked. 

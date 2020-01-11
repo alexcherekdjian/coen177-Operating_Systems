@@ -1,0 +1,37 @@
+#!/bin/sh
+echo "-----100k-----"
+time ./step3 100k.txt 100
+diff 100k.txt test
+time ./step3 100k.txt 1000
+diff 100k.txt test
+time ./step3 100k.txt 10000
+diff 100k.txt test
+time ./step3 100k.txt 100000
+diff 100k.txt test
+echo "-----1M-----"
+time ./step3 1M.txt 100
+diff 1M.txt test
+time ./step3 1M.txt 1000
+diff 1M.txt test
+time ./step3 1M.txt 10000
+diff 1M.txt test
+time ./step3 1M.txt 100000
+diff 1M.txt test
+echo "-----10M-----"
+time ./step3 10M.txt 100
+diff 10M.txt test
+time ./step3 10M.txt 1000
+diff 10M.txt test
+time ./step3 10M.txt 10000
+diff 10M.txt test
+time ./step3 10M.txt 100000
+diff 10M.txt test
+echo "-----100M-----"
+time ./step3 100M.txt 100
+diff 100M.txt test
+time ./step3 100M.txt 1000
+diff 100M.txt test
+time ./step3 100M.txt 10000
+diff 100M.txt test
+time ./step3 100M.txt 100000
+diff 100M.txt test
